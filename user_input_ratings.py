@@ -38,7 +38,7 @@ def add_user_rating(restaurant_ratings_dict):
 
 
 def prompt_user_for_info():
-
+    
     while True:
         if raw_input("Do you want to add a restaurant to the list? y/n: ").lower() == "y":
             user_added_rating(restaurant_ratings_dict)
