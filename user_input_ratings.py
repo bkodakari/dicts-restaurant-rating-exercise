@@ -27,10 +27,23 @@ def get_restaurant_ratings(filename):
 def print_restaurant_ratings(restaurant_ratings_dict):
     """Prints restaurant ratings"""
 
-    # sorted_dict = sorted(restaurant_ratings_dict)
-    # for key in sorted_dict:
-    #     print "{} is rated at {}.".format(key, restaurant_ratings_dict[key])
     for key, value in sorted(restaurant_ratings_dict.iteritems()):
         print "{} is rated at {}.".format(key, value)
+
+
+def add_user_rating(restaurant_ratings_dict):
+    restaurant = raw_input("What is the name of the restaurant?: ").title()
+    rating = raw_input("What is the rating of the restaurant?: ")
+    restaurant_ratings_dict[restaurant] = rating
+
+
+def prompt_user_for_info():
+
+    while True:
+        if raw_input("Do you want to add a restaurant to the list? y/n: ").lower() == "y":
+            user_added_rating(restaurant_ratings_dict)
+            return restaurant_ratings_dict
+        else:
+            
 
 print_restaurant_ratings(get_restaurant_ratings(filename))
